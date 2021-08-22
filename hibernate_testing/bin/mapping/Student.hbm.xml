@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.5.6//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.5.6.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="hibernate_testing.entities.Student" table="Student">  
+    <id name="id">  
+     <generator class="assigned"></generator>  
+    </id>  
+            
+            
+    <property name="first_name"></property>
+    <property name="last_name"></property>
+    <property name="email"></property>  
+
+  </class>  
+            
+ </hibernate-mapping>  
