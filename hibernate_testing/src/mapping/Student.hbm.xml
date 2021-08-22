@@ -4,14 +4,11 @@
   
  <hibernate-mapping>  
   <class name="hibernate_testing.entities.Student" table="Student">  
-    <id name="id">  
-     <generator class="assigned"></generator>  
-    </id>  
+    <id name="id" column="id"></id>  
             
-            
-    <property name="first_name"></property>
-    <property name="last_name"></property>
-    <property name="email"></property>  
+    <property name="first_name" column="first_name"></property>
+    <property name="last_name" column="last_name"></property>
+    <property name="email" column="email"></property>  
 
   </class>  
             

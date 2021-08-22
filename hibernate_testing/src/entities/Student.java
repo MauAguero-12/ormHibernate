@@ -1,13 +1,17 @@
 package entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Student")
-public class Student {
+@IdClass(Student.class)
+public class Student implements Serializable{
 	
 	@Id
 	@Column(name="id")
@@ -31,8 +35,7 @@ public class Student {
 		
 	}
 
-	public Student(int id, String firs_name, String last_name, String email) {
-		this.id = id;
+	public Student(String first_name, String last_name, String email) {
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email = email;

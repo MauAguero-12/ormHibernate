@@ -10,15 +10,10 @@ import entities.Student;
 public class CreateStudentDemo {
 
 	public static void main(String[] args) {
-		System.out.println("1");
-		
-		Configuration conf = new Configuration().configure("hibernate.cfg.xml");
-		
-		System.out.println("2");
+		Configuration conf = new Configuration();
+		conf.configure("hibernate.cfg.xml");
 		
 		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(conf.getProperties());
-		
-		System.out.println("3");
 		
 		SessionFactory factory = conf.addAnnotatedClass(Student.class).buildSessionFactory(builder.build());
 		
@@ -26,7 +21,7 @@ public class CreateStudentDemo {
 		
 		try {
 			//crear estudiante
-			Student tempStudent = new Student(1, "Rodrigo", "Nuñez", "vsurak@gmail.com");
+			Student tempStudent = new Student("Rodrigo", "Nuñez", "vsurak@gmail.com");
 			
 			//iniciar transaccion
 			session.beginTransaction();
